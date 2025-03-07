@@ -1,6 +1,6 @@
 import de.bezier.guido.*;
 
-private final static int dimensions = 10;
+private final static int dimensions = 20;
 private final static int NUM_ROWS = dimensions, NUM_COLS = dimensions;
 private MSButton[][] buttons;
 private ArrayList<MSButton> mines = new ArrayList<MSButton>();
