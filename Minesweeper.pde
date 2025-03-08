@@ -11,11 +11,11 @@ private boolean gameOver = false;
 private boolean gameWon = false;
 private boolean firstClick = false;
 
-void setup() {
+public void setup() {
   size(400, 450);
   textAlign(CENTER, CENTER);
   Interactive.make(this);
-  buttons = new MSButton[NUM_ROWS][NUM_COLS]; //create buttons 
+  buttons = new MSButton[NUM_ROWS][NUM_COLS];
   for (int i = 0; i < NUM_ROWS; i++) {
     for (int j = 0; j < NUM_COLS; j++) {
       buttons[i][j] = new MSButton(i, j);
@@ -24,14 +24,13 @@ void setup() {
 }
 
 public void setMines(int row, int col) {
-  if (firstClick == true) { //if first click 
-    while (mines.size() < NUM_MINES) { //generate mines 
-      int r = (int) (Math.random() * NUM_ROWS); //random row 
-      int c = (int) (Math.random() * NUM_COLS); //random col 
+  if (firstClick == true) {  
+    while (mines.size() < NUM_MINES) { 
+      int r = (int) (Math.random() * NUM_ROWS);  
+      int c = (int) (Math.random() * NUM_COLS); 
       MSButton button = buttons[r][c];
-      if (!mines.contains(button) && (r != row || c != col)) { //if mine and n
+      if (!mines.contains(button) && (r != row || c != col)) { 
         mines.add(button);
-        System.out.println(r + "," + c);
       }
     }
   }
@@ -169,7 +168,7 @@ public class MSButton {
     } else {
       fill(120, 120, 120);
       stroke(255);
-      strokeWeight(0.5);
+      strokeWeight(1);
       rect(x-1, y-1, width, height+50);
     }
 
